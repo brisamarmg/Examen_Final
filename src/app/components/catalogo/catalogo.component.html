@@ -1,0 +1,71 @@
+<div class="netflix-app">
+  <!-- Barra superior -->
+  <nav class="navbar">
+    <span class="brand">RICKFLIX</span>
+    <div class="nav-actions">
+      <button class="btn-logout" (click)="cerrarSesion()">Cerrar sesión</button>
+    </div>
+  </nav>
+
+  <!-- Banner Principal -->
+  <section class="hero-banner" *ngIf="episodio1">
+    <div class="hero-content">
+      <span class="badge">DESTACADO DEL CATÁLOGO</span>
+      <h1>{{ episodio1.name }} ({{ episodio1.episode }})</h1>
+      <p>Fecha de emisión: {{ episodio1.air_date }} • {{ episodio1.characters.length }} personajes en escena</p>
+      <button class="btn-play" (click)="verEpisodio(episodio1.id)">ℹ Ver detalle del episodio</button>
+    </div>
+  </section>
+
+  <!-- FILA 1: Episodio 1 -->
+  <section class="catalog-row" *ngIf="episodio1">
+    <div class="row-header">
+      <h2 (click)="verEpisodio(episodio1.id)" class="clickable-title">
+        {{ episodio1.episode }} - {{ episodio1.name }} <span>(Ver detalle &rsaquo;)</span>
+      </h2>
+      <select [(ngModel)]="selectedEp1Id" (change)="cargarFilaEpisodio(selectedEp1Id, 1)" class="ep-select">
+        <option *ngFor="let ep of todosLosEpisodios" [value]="ep.id">
+          Cambiar capítulo: {{ ep.episode }} - {{ ep.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="cards-slider">
+      <div class="character-card" *ngFor="let p of personajesEp1" (click)="verPersonaje(p.id)">
+        <img [src]="p.image" [alt]="p.name" />
+        <div class="card-info">
+          <h3>{{ p.name }}</h3>
+          <span class="status" [class.alive]="p.status === 'Alive'" [class.dead]="p.status === 'Dead'">
+            ● {{ p.status }} - {{ p.species }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILA 2: Episodio 2 -->
+  <section class="catalog-row" *ngIf="episodio2">
+    <div class="row-header">
+      <h2 (click)="verEpisodio(episodio2.id)" class="clickable-title">
+        {{ episodio2.episode }} - {{ episodio2.name }} <span>(Ver detalle &rsaquo;)</span>
+      </h2>
+      <select [(ngModel)]="selectedEp2Id" (change)="cargarFilaEpisodio(selectedEp2Id, 2)" class="ep-select">
+        <option *ngFor="let ep of todosLosEpisodios" [value]="ep.id">
+          Cambiar capítulo: {{ ep.episode }} - {{ ep.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="cards-slider">
+      <div class="character-card" *ngFor="let p of personajesEp2" (click)="verPersonaje(p.id)">
+        <img [src]="p.image" [alt]="p.name" />
+        <div class="card-info">
+          <h3>{{ p.name }}</h3>
+          <span class="status" [class.alive]="p.status === 'Alive'" [class.dead]="p.status === 'Dead'">
+            ● {{ p.status }} - {{ p.species }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

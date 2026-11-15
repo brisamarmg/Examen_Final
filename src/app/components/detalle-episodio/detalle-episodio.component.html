@@ -1,0 +1,17 @@
+<div class="ep-container" *ngIf="episodio">
+  <button class="btn-back" (click)="volver()">&larr; Volver al catálogo</button>
+
+  <div class="ep-header">
+    <span class="tag">{{ episodio.episode }}</span>
+    <h1>{{ episodio.name }}</h1>
+    <p><strong>Fecha de estreno:</strong> {{ episodio.air_date }}</p>
+  </div>
+
+  <h2>Personajes que aparecen en este episodio</h2>
+  <div class="grid-personajes">
+    <div class="card" *ngFor="let p of personajes" (click)="verPersonaje(p.id)">
+      <img [src]="p.image" [alt]="p.name" />
+      <p>{{ p.name }}</p>
+    </div>
+  </div>
+</div>

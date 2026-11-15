@@ -1,0 +1,56 @@
+.netflix-login-bg {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f1f1f 0%, #000000 100%);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.netflix-header {
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+.logo {
+  color: #e50914;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.login-box {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 50px 40px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 380px;
+  margin-top: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.8);
+}
+.login-box h2 { margin-bottom: 25px; }
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 16px;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.btn-netflix {
+  width: 100%;
+  padding: 14px;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn-netflix:hover { background: #f40612; }
+.error { color: #e87c03; font-size: 0.9rem; }

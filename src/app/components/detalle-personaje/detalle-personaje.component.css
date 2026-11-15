@@ -1,0 +1,36 @@
+.detail-container {
+  background: #141414;
+  color: white;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: 'Segoe UI', sans-serif;
+}
+.btn-back {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.detail-card {
+  display: flex;
+  gap: 32px;
+  background: #1f1f1f;
+  padding: 30px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.detail-card img { border-radius: 8px; width: 300px; height: 300px; object-fit: cover; }
+.detail-info h1 { color: #e50914; margin-top: 0; }
+.episodes-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip {
+  background: #2c2c2c;
+  color: #54b9c5;
+  border: 1px solid #444;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.chip:hover { background: #e50914; color: white; }
